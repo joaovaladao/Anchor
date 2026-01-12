@@ -1,7 +1,11 @@
 import { Anchor, Waves, Ship, MapPin, ChevronRight, Zap, Compass } from 'lucide-react';
 import { useState } from 'react';
 
-export default function EntryScreen() {
+interface EntryScreenProps {
+  onExplore: () => void;
+}
+
+export default function EntryScreen({ onExplore }: EntryScreenProps) {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   return (
@@ -95,7 +99,7 @@ export default function EntryScreen() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="button-hover-glow px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-smooth flex items-center justify-center gap-2 group">
+              <button onClick={onExplore} className="button-hover-glow px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-smooth flex items-center justify-center gap-2 group">
                 Explore Nearby Products
                 <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
