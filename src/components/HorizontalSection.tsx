@@ -53,7 +53,7 @@ export default function HorizontalSection({ section, onProductClick }: Horizonta
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex gap-4 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory"
+          className="flex gap-4 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory hide-scrollbar"
           style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
         >
           {section.products.map((product) => (

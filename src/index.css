@@ -160,3 +160,12 @@
 .button-hover-glow:hover::before {
   left: 100%;
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
