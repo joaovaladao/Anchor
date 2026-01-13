@@ -3,9 +3,10 @@ import { useState } from 'react';
 
 interface EntryScreenProps {
   onExplore: () => void;
+  onBecomeSailor: () => void;
 }
 
-export default function EntryScreen({ onExplore }: EntryScreenProps) {
+export default function EntryScreen({ onExplore, onBecomeSailor }: EntryScreenProps) {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   return (
@@ -104,8 +105,8 @@ export default function EntryScreen({ onExplore }: EntryScreenProps) {
                 <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
 
-              <button className="button-hover-glow px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-sky-300 font-semibold rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-smooth flex items-center justify-center gap-2 group">
-                Become a Seller
+              <button onClick={onBecomeSailor} className="button-hover-glow px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-sky-300 font-semibold rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-smooth flex items-center justify-center gap-2 group">
+                Become a Sailor
                 <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
             </div>
