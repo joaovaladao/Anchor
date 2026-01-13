@@ -3,10 +3,11 @@ import { Anchor, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 
 interface AuthScreenProps {
   onBack: () => void;
+  initialMode?: 'login' | 'register';
 }
 
-export default function AuthScreen({ onBack }: AuthScreenProps) {
-  const [isLogin, setIsLogin] = useState(true);
+export default function AuthScreen({ onBack, initialMode = 'login' }: AuthScreenProps) {
+  const [isLogin, setIsLogin] = useState(initialMode === 'login');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 

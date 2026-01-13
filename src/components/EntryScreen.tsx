@@ -4,9 +4,11 @@ import { useState } from 'react';
 interface EntryScreenProps {
   onExplore: () => void;
   onBecomeSailor: () => void;
+  onLogin: () => void;
+  onSignUp: () => void;
 }
 
-export default function EntryScreen({ onExplore, onBecomeSailor }: EntryScreenProps) {
+export default function EntryScreen({ onExplore, onBecomeSailor, onLogin, onSignUp }: EntryScreenProps) {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   return (
@@ -30,6 +32,24 @@ export default function EntryScreen({ onExplore, onBecomeSailor }: EntryScreenPr
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="flex justify-between items-center mb-8 lg:mb-16">
+          <div className="w-20"></div>
+          <div className="flex gap-3 sm:gap-4">
+            <button
+              onClick={onLogin}
+              className="px-4 sm:px-6 py-2 text-sky-300 hover:text-sky-200 font-medium transition-smooth text-sm sm:text-base"
+            >
+              Log in
+            </button>
+            <button
+              onClick={onSignUp}
+              className="px-4 sm:px-6 py-2 bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 hover:text-sky-200 border border-sky-500/40 hover:border-sky-500/60 font-medium rounded-lg transition-smooth text-sm sm:text-base"
+            >
+              Sign up
+            </button>
+          </div>
+        </div>
+
         <header className="text-center mb-16 lg:mb-24 animate-slide-up">
           <div className="inline-flex items-center justify-center mb-8">
             <div className="relative">
