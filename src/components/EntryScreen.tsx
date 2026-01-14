@@ -32,9 +32,8 @@ export default function EntryScreen({ onExplore, onBecomeSailor, onLogin, onSign
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="flex justify-between items-center mb-8 lg:mb-16">
-          <div className="w-20"></div>
-          <div className="flex gap-3 sm:gap-4">
+        <header className="relative text-center mb-16 lg:mb-24 animate-slide-up">
+          <div className="absolute top-0 right-0 flex gap-3 sm:gap-4 items-center">
             <button
               onClick={onLogin}
               className="px-4 sm:px-6 py-2 text-sky-300 hover:text-sky-200 font-medium transition-smooth text-sm sm:text-base"
@@ -48,9 +47,6 @@ export default function EntryScreen({ onExplore, onBecomeSailor, onLogin, onSign
               Sign up
             </button>
           </div>
-        </div>
-
-        <header className="text-center mb-16 lg:mb-24 animate-slide-up">
           <div className="inline-flex items-center justify-center mb-8">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-ocean rounded-2xl blur-xl opacity-50"></div>
